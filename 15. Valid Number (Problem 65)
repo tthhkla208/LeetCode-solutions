@@ -1,6 +1,9 @@
 
-class Solution {
-    public boolean isNumber(String s) {
+import java.util.Scanner;
+
+public class ValidNumber {
+
+    public static boolean isNumber(String s) {
         s = s.trim();
 
         boolean digit = false;
@@ -44,6 +47,22 @@ class Solution {
                 return false;
             }
         }
+
+        return digit && digitAfterExp;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String s = sc.nextLine();
+
+        System.out.println("Valid Number: " + isNumber(s));
+
+        sc.close();
+    }
+}
+
 
         return digit && digitAfterExp;
     }
