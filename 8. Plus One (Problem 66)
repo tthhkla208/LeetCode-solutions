@@ -1,6 +1,10 @@
 
-class Solution {
-    public int[] plusOne(int[] digits) {
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class PlusOne {
+
+    public static int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0; i--) {
             if (digits[i] < 9) {
                 digits[i]++;
@@ -14,5 +18,24 @@ class Solution {
         result[0] = 1;
 
         return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of digits: ");
+        int n = sc.nextInt();
+
+        int[] digits = new int[n];
+
+        System.out.println("Enter digits:");
+        for (int i = 0; i < n; i++) {
+            digits[i] = sc.nextInt();
+        }
+
+        System.out.println("Result: " +
+                           Arrays.toString(plusOne(digits)));
+
+        sc.close();
     }
 }
